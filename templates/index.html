@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titanic Data Website</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <button class="menu-btn">☰</button>
+    <nav class="menu">
+      <button
+        class="menu-item"
+        data-bg="{{ url_for('static', filename='images/RMS.jpg') }}"
+        data-text="Overall survival rate"
+      >
+        Overall survival rate
+      </button>
+      <button
+        class="menu-item"
+        data-bg="{{ url_for('static', filename='images/w27.jpg') }}"
+        data-text="Text for Image 2"
+      >
+        Question 2
+      </button>
+      <button
+        class="menu-item"
+        data-bg="{{ url_for('static', filename='images/tiatan.jpg') }}"
+        data-text="Text for Image 3"
+      >
+        Question 3
+      </button>
+    </nav>
+
+    <div class="background-container">
+      <img
+        src="{{ url_for('static', filename='images/RMS.jpg') }}"
+        class="background-image active"
+        alt="Background"
+      />
+    </div>
+
+    <div class="content active">
+      <h1>Titanic Text Discription content</h1>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
