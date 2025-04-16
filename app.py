@@ -35,12 +35,13 @@ def get_stats(stat_type):
     conn.close()
     return jsonify(stats)
 
+
 @app.route('/titanic_table')
 def titanic_table():
     conn = get_db_connection()
-    passengers = conn.execute('SELECT * FROM titanic LIMIT 100').fetchall()
+    passengers = conn.execute('SELECT * FROM titanic').fetchall()
     conn.close()
-    return render_template('table.html', passengers=passengers)
+    return render_template('table.html', data=passengers, columns=['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'])
 
 if __name__ == '__main__':
     app.run(debug=True)
