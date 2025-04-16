@@ -3,50 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titanic Data Website</title>
+    <title>Titanic Data Explorer</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
-    <button class="menu-btn">☰</button>
-    <nav class="menu">
-      <button
-        class="menu-item"
-        data-bg="{{ url_for('static', filename='images/RMS.jpg') }}"
-        data-text="Overall survival rate"
-      >
-        Overall survival rate
+    <div class="menu-container">
+      <button class="hamburger">
+        <i class="fas fa-bars"></i>
       </button>
-      <button
-        class="menu-item"
-        data-bg="{{ url_for('static', filename='images/w27.jpg') }}"
-        data-text="Text for Image 2"
-      >
-        Question 2
-      </button>
-      <button
-        class="menu-item"
-        data-bg="{{ url_for('static', filename='images/tiatan.jpg') }}"
-        data-text="Text for Image 3"
-      >
-        Question 3
-      </button>
-    </nav>
-
-    <div class="background-container">
-      <img
-        src="{{ url_for('static', filename='images/RMS.jpg') }}"
-        class="background-image active"
-        alt="Background"
-      />
+      <nav class="dropdown-menu">
+        <button
+          class="menu-item"
+          data-bg="{{ url_for('static', filename='assets/story1.mp4') }}"
+          data-stat="survival"
+        >
+          Survival Statistics
+        </button>
+        <button
+          class="menu-item"
+          data-bg="{{ url_for('static', filename='assets/story2.mp4') }}"
+          data-stat="embarkation"
+        >
+          Embarkation Ports
+        </button>
+        <button
+          class="menu-item"
+          data-bg="{{ url_for('static', filename='assets/story3.mp4') }}"
+          data-stat="passenger"
+        >
+          Passenger Statistics
+        </button>
+        <a
+          href="/titanic_table"
+          class="menu-item"
+          target="_blank"
+          style="text-decoration: none"
+        >
+          View Passenger Data
+        </a>
+      </nav>
     </div>
 
-    <div class="content active">
-      <h1>Titanic Text Discription content</h1>
+    <div class="video-container">
+      <video class="background-video active" autoplay muted loop playsinline>
+        <source
+          src="{{ url_for('static', filename='assets/story1.mp4') }}"
+          type="video/mp4"
+        />
+      </video>
     </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <div class="content-container active">
+      <div class="content-wrapper">
+        <h1 class="story-title" id="stats-title"></h1>
+        <div class="story-content" id="stats-content"></div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
