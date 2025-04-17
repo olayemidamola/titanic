@@ -7,7 +7,7 @@ app = Flask(__name__,
             template_folder='templates')
 
 def get_db_connection():
-    db_path = os.path.join(app.root_path, 'database', 'titanic.db')
+    db_path = os.path.join(app.root_path,'..','database', 'titanic.db')
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
