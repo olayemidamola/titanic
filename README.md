@@ -8,11 +8,11 @@ A simple flask web application to display content of the titanic dataset. Users 
 titanic_app/
 ├── data preprocessing/       # Placeholder for future data tasks
 |   ├── train.csv       #The original database from Kaggle
-|   ├── titanic.ipynb   #Notebook used for cleaning data
-│   └── titanic_cleaned.csv             #Cleaned Titanic Data
+|   └── titanic.ipynb   #Notebook used for cleaning data
 |
 |
 ├── database/                 # Contains the SQLite DB
+     ├── titanic_cleaned.csv             #Cleaned Titanic Data
 |    ├── titanic_database.ipynb   #Contains the data exported to the database
 |    └── titanic.db
 |
