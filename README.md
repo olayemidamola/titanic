@@ -1,13 +1,13 @@
 # Titanic Project using (Flask + SQLite3)
 
-A simple flask web application to display content of the titanic dataset. Users can get information such as Survival statistics, Embarkation ports, Pasenger statistics and can also view all passenger data all on the homepage.
+A simple flask web application to display content of the titanic dataset. Users can get information such as Survival statistics, Embarkation ports, passenger statistics and can also view all passenger data all on the homepage.
 
 ## Project Structure
 
 ```
 titanic_app/
-├── Data Preprocessing/       # Placeholder for future data tasks
-|   ├── train.csv       #the original database from Kaggle
+├── data preprocessing/       # Placeholder for future data tasks
+|   ├── train.csv       #The original database from Kaggle
 |   ├── titanic.ipynb   #Notebook used for cleaning data
 │   └── titanic_cleaned.csv             #Cleaned Titanic Data
 |
